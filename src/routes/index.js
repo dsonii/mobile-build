@@ -25,5 +25,6 @@ router.use('/settings', settingRoute);
 router.use('/offers', offerRoute);
 router.use('/suggest', suggestRoute);
 router.use('/payments',paymentRoute);
+router.use('/chat',chatRoute);
 
 module.exports = router;

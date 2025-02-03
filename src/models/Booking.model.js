@@ -157,6 +157,10 @@ const BookingSchema = new mongoose.Schema({
         default:
             ""
     },
+    old_fare: {
+        type: String,
+        default:""
+    },
     ip: { type: String, default: "0.0.0.0" },
     booking_date: { type: Date, default: null },
     bus_depature_date: { type: Date, default: null }

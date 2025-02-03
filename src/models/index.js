@@ -32,3 +32,4 @@ module.exports.PaymentGateway = require("./PaymentGateway.model");
 module.exports.UserNotification = require("./UserNotification.model");
 module.exports.BusSchedule = require("./BusSchedule.model");
 module.exports.BusScheduleLocation = require("./BusScheduleLocation.model");
+module.exports.Chat = require("./Chat.model");
