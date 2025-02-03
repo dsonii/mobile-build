@@ -11,6 +11,7 @@ const bookingRoute = require('./booking');
 const offerRoute = require('./offer');
 const suggestRoute = require('./suggest');
 const paymentRoute = require('./payment');
+const chatRoute = require('./chat');
 const router = express.Router();
 
 
