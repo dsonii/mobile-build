@@ -53,7 +53,7 @@ module.exports = {
                       if (payment.userId.device_token) {
                         user.UserNotification(
                           "Booking Confirmed",
-                          `Thanks for booking Last Mile for ${updateBooking.start_date}, Show your ticket Qr Code to Driver while boarding.We'll send driver detail in ticket when shuttle starts trip.`,
+                          `Thanks for booking ferri shuttle for ${updateBooking.start_date}, Show your ticket Qr Code to Driver while boarding.We'll send driver detail in ticket when shuttle starts trip.`,
                           "",
                           payment.userId.device_token
                         ); //title,message,data,token
@@ -115,7 +115,7 @@ module.exports = {
                           if (payment.userId.device_token) {
                             user.UserNotification(
                               "Pass Purchased",
-                              `Thanks for booking Last Mile. Pass has been added to ticket history. Show your ticket Qr Code to Driver while boarding.We'll send driver detail in ticket when shuttle starts trip.`,
+                              `Thanks for booking ferri shuttle. Pass has been added to ticket history. Show your ticket Qr Code to Driver while boarding.We'll send driver detail in ticket when shuttle starts trip.`,
                               "",
                               payment.userId.device_token
                             ); //title,message,data,token

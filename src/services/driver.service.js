@@ -103,7 +103,7 @@ const updateBookingStatus = async (pnr_no, travel_status) => {
         if (travel_status == "ONBOARDED") {
           user.UserNotification(
             "Trip Verified",
-            `Your trip is now verified. enjoy your Last Mile trip.`,
+            `Your trip is now verified. enjoy your ferri shuttle trip.`,
             "",
             getUser.device_token
           ); //title,message,data,token

@@ -5,6 +5,6 @@ const negotiationController = require('../controllers/negotiation');
 const router = express.Router();
 
 router.post('/', negotiationController.create);
-router.get('/', negotiationController.get);
+router.post('/get', negotiationController.getChat);
 
 module.exports = router;

@@ -11,6 +11,7 @@ const bookingAsignSchema = new Schema({
     routeId: { type: ObjectId, ref: 'Route', required: true },
     driverId: { type: ObjectId, ref: "Driver", required: true },
     assistantId: { type: [ObjectId], ref: "Driver" },
+    busScheduleId: { type: ObjectId, ref: 'Bus_Schedule', required: true },
     date_time: { type: Date, index: true },
     status: { type: Boolean, default: false },
     angle:{type:String,default:"0"},

@@ -12,6 +12,7 @@ const locationController = require('../controllers/locations');
 router.post('/location',authenticate, locationController.searchlocation);
 router.post('/google',authenticate, locationController.findSearchAddress);
 router.post('/savelocation',authenticate, locationController.savelocation);
+router.post('/savecurrentlocation',authenticate, locationController.saveBookingLocation);
 
 
 module.exports = router;

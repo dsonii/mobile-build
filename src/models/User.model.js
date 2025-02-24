@@ -7,6 +7,11 @@ var Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 const UserSchema = new mongoose.Schema(
   {
+    company: { type: String, default: "", index: true },
+    customer_code: { type: String, default: "", index: true },
+    emargency_number1: { type: String, default: "", index: true },
+    emargency_number2: { type: String, default: "", index: true },
+    emargency_number3: { type: String, default: "", index: true },
     firstname: {
       type: String,
       default: "",
@@ -163,6 +168,11 @@ UserSchema.pre("save", function (next) {
 
 UserSchema.statics.formatedData = function (user) {
   return {
+    company: user.company,
+    customer_code: user.customer_code,
+    emargency_number1: user.emargency_number1,
+    emargency_number2: user.emargency_number2,
+    emargency_number3: user.emargency_number3,
     firstname: user.firstname,
     lastname: user.lastname,
     gender: user.gender,

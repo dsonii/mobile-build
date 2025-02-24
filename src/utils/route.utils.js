@@ -90,7 +90,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;
@@ -108,7 +108,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;
@@ -125,7 +125,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;
@@ -142,7 +142,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;
@@ -159,7 +159,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;
@@ -176,7 +176,7 @@ module.exports = {
         let isFemale = "";
         for (i = 0; i < seatExists[1].length; i++) { 
           if (seatExists[1][i].key === d.seat_no) {
-            isFemale = seatExists[1][i].value;
+            isFemale = seatExists[1][i].value == 'Female';
           }
         }
         d.is_female = isFemale;

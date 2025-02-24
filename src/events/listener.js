@@ -70,7 +70,7 @@ eventsListener.on("NOTIFY-ALL-BOOKING-CUSTOMER", async (routeId, assignDate, dri
         if (booking.userId && booking.userId.device_token) {
           user.UserNotification(
             "Trip Reminder",
-            `Hey ${booking.userId.firstname}, Its time to board LastMile. Track your bus for live update`,
+            `Hey ${booking.userId.firstname}, Its time to board Ferri Shuttle. Track your bus for live update`,
             "",
             booking.userId.device_token); //title,message,data,token
         }

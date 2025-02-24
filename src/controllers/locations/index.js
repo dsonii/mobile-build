@@ -1,4 +1,5 @@
-const { SearchAddress, Location } = require("../../models");
+const { SearchAddress, Location, CurrentLocation } = require("../../models");
+const mongoose = require("mongoose");
 
 module.exports = {
   savelocation: async (req, res) => {
@@ -123,6 +124,37 @@ module.exports = {
         status: false,
         message: "Location not found",
         errorMessage: err.message,
+      });
+    }
+  },
+   saveBookingLocation: async (req, res) => {
+    const {bookingId, lng, lat } = req.body;
+    var locationExist = await CurrentLocation.findOne({bookingId:mongoose.Types.ObjectId(bookingId)});
+    let saveLocation = {};
+    if (!locationExist) {
+      saveLocation = new CurrentLocation({
+        bookingId: mongoose.Types.ObjectId(bookingId),
+        current_location: [parseFloat(lng), parseFloat(lat)],
+        old_location: [],
+      });
+      const currentLocation = await saveLocation.save();
+      res.status(200).json({
+        status: true,
+        message: "saved Current Location",
+      });
+      
+    } else {
+      saveLocation = {
+        current_location: [parseFloat(lng), parseFloat(lat)],
+        old_location: locationExist.current_location,
+      };
+      await CurrentLocation.updateOne(
+        {_id: mongoose.Types.ObjectId(locationExist._id) },
+        saveLocation
+      );
+      res.status(200).json({
+        status: true,
+        message: "saved Current Location",
       });
     }
   },

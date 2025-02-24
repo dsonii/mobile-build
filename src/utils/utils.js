@@ -34,8 +34,9 @@ const sendOTPTextLocal = async (phone, OTP) => {
     const senderID = encodeURI(getsetting.sms.senderId);
     const apiKey = getsetting.sms.apiKey;
     const number = encodeURI(phone);
+    //Welcome to Ferri Shuttle. %%|otp^{"inputtype" : "text","maxlength" : "5"}%% is the ACCOUNT PASSWORD for your account. DO NOT SHARE with anyone.
     const message = encodeURIComponent(
-      `Welcome to Last Mile. ${OTP} is the ACCOUNT PASSWORD for your account. DO NOT SHARE with anyone.`
+      `Welcome to Ferri Shuttle. ${OTP} is the ACCOUNT PASSWORD for your account. DO NOT SHARE with anyone.`
     );
     const params = `apikey=${apiKey}&numbers=${number}&sender=${senderID}&message=${message}`;
     const BaseURL = `https://api.textlocal.in/send/?${params}`;
@@ -455,6 +456,7 @@ async function bookingtransformData(data) {
            const picture = item.userId.ProfilePic ? item.userId.ProfilePic : "default.jpg";
 		
 		const qrData = {
+          booking_id: item._id,
           final_total_fare: item.final_total_fare,
           pnr_no: item.pnr_no,
           seat_nos: item.seat_nos,
@@ -502,6 +504,7 @@ async function bookingtransformData(data) {
               seat: extractContentInsideBrackets(item.seat),
             };
           }),
+        booking_id: item._id,
         travel_status: item.travel_status,
         seat_nos: item.seat_nos,
         has_return: item.has_return ? "1" : "2",

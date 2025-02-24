@@ -934,6 +934,11 @@ module.exports = {
           office_lat,
           office_lng,
           office_timing,
+          company,
+          customer_code,
+          emargency_number1,
+          emargency_number2,
+          emargency_number3
         } = req.body;
 
         const { userId, walletId } = req.session;
@@ -948,6 +953,11 @@ module.exports = {
             social_id,
             mode,
             device_token,
+            company,
+            customer_code,
+            emargency_number1,
+            emargency_number2,
+            emargency_number3
           };
           if (
             (home_address != "" &&

@@ -8,8 +8,8 @@ const moment = require("moment-timezone");
 const ChatSchema = new mongoose.Schema (
   {
     bookingId: { type: Object, ref: 'Booking', required: true },
-    userId: { type: Object, ref: 'User', required: true },
-    driverId: { type: Object, ref: 'Driver', required: true },
+    userId: { type: Object, ref: 'User', default: "" },
+    driverId: { type: Object, ref: 'Driver', default: "" },
     sentBy: { type: String, default: "" },
     amount: { type: String, default:"" },
     message: { type: String, default:"" },
