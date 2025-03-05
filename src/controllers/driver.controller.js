@@ -1,6 +1,7 @@
 const Utils = require("../utils/utils");
 const { driverService } = require("../services");
 const { Driver, Booking, Session, Passenger } = require("../models");
+const mongoose = require("mongoose");
 
 module.exports = {
   login: async (req, res) => {
@@ -150,6 +151,9 @@ module.exports = {
       const { userId } = req.session;
       const { address, lat, lng, angle } = req.body;
       await driverService.updateLocation(userId, lat, lng, address, angle);
+      if (typeof req.body.driver_status != 'undefined') {
+        await Driver.findByIdAndUpdate({_id:mongoose.Types.ObjectId(userId)}, {'duty_status':req.body.driver_status});
+      }
       res.status(200).json({
         status: true,
         message: "Location updated successfully",
